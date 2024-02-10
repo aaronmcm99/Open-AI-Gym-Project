@@ -57,10 +57,10 @@ env.close()
 ```
 ### 3. Training Section
 ### Description
--Sets up the PPO algorithm with specified parameters.
--Creates a vectorized environment for parallelized training.
--Initializes the PPO model with the Multi-Layer Perceptron (MLP) policy.
--Trains the model for a specified number of time steps.
+- Sets up the PPO algorithm with specified parameters.
+- Creates a vectorized environment for parallelized training.
+- Initializes the PPO model with the Multi-Layer Perceptron (MLP) policy.
+- Trains the model for a specified number of time steps.
 ```python
 # PPO Algorithm Setup
 env_name = 'CartPole-v1'
@@ -72,8 +72,8 @@ model.learn(total_timesteps=10000)
 ```
 ### 4. Evaluation Section
 #### Description
--Evaluates the trained PPO model's performance by running it in the environment for a certain number of evaluation episodes.
--Prints the average reward per episode and standard deviation for reward.
+- Evaluates the trained PPO model's performance by running it in the environment for a certain number of evaluation episodes.
+- Prints the average reward per episode and standard deviation for reward.
 ```python
 # Evaluate the model
 evaluate_policy(model, vec_env, n_eval_episodes=10, render=True)
@@ -84,9 +84,9 @@ env.close()
 ```
 ### 5. Testing Section
 #### Description
--Tests the trained PPO model's performance in the environment by running it for a few episodes.
--The model's action predictions are used to interact with the environment.
--The total score (cumulative reward) for each episode is printed.
+- Tests the trained PPO model's performance in the environment by running it for a few episodes.
+- The model's action predictions are used to interact with the environment.
+- The total score (cumulative reward) for each episode is printed.
 ```python
 # Number of episodes
 episodes = 5
@@ -106,8 +106,8 @@ env.close()
 ```
 ### 6. Callback
 #### Description
--Sets up a callback mechanism to stop training when the reward threshold is reached and save the best model during training.
--Monitors training progress and prevents overfitting.
+- Sets up a callback mechanism to stop training when the reward threshold is reached and save the best model during training.
+- Monitors training progress and prevents overfitting.
 ```python
 # Callback
 from stable_baselines3.common.callbacks import EvalCallback, StopTrainingOnRewardThreshold
@@ -123,8 +123,8 @@ model = PPO('MlpPolicy', vec_env, verbose=1, tensorboard_log='logpath')
 ```
 ### 7. Changing Policies
 #### Description
--Modifies the policy network architecture for the PPO algorithm to explore its impact on training and performance.
--Trains the model with the updated policy architecture.
+- Modifies the policy network architecture for the PPO algorithm to explore its impact on training and performance.
+- Trains the model with the updated policy architecture.
 ```python
 # Changing Policies
 net_arch = [dict(pi=[128,128,128,128], vf=[128,128,128,128])]
@@ -135,8 +135,8 @@ env.close()
 ```
 ### 8. Changing Algoirthm
 #### Description
--Switches the algorithm from PPO to DQN to compare the performance of both algorithms on the same environment.
--Initializes the DQN model and trains it for a specified number of time steps.
+- Switches the algorithm from PPO to DQN to compare the performance of both algorithms on the same environment.
+- Initializes the DQN model and trains it for a specified number of time steps.
 ```python
 # Changing Algorithm
 from stable_baselines3 import DQN
